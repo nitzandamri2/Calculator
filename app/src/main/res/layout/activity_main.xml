@@ -3,115 +3,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center_horizontal"
-    android:background="#FFF5F5">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="מחשבון חכם"
-        android:textSize="28sp"
-        android:textColor="#C71585"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp"/>
+    android:padding="20dp"
+    android:background="#FFF5F5"
+    android:gravity="center_horizontal">
 
     <EditText
-        android:id="@+id/edit_text_first_number"
+        android:id="@+id/display"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="הכנס מספר ראשון"
-        android:inputType="numberDecimal"
-        android:padding="16dp"
-        android:background="@android:drawable/editbox_background"
-        android:gravity="center"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/edit_text_second_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:hint="הכנס מספר שני"
-        android:inputType="numberDecimal"
-        android:padding="16dp"
-        android:background="@android:drawable/editbox_background"
-        android:gravity="center"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/text_view_result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="140dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        android:gravity="center"
-        android:text="תוצאה: 0"
+        android:layout_marginBottom="20dp"
+        android:background="@android:drawable/editbox_background"
+        android:gravity="bottom|end"
+        android:hint="display"
+        android:padding="15dp"
         android:textColor="#C71585"
-        android:textSize="32sp"
-        android:textStyle="bold" />
+        android:inputType="text"
+        android:digits="0123456789.+-*/="
+        android:textSize="40sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
 
-    <LinearLayout
+    <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:alignmentMode="alignMargins"
+        android:columnCount="4">
 
         <Button
-            android:id="@+id/button_add"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="8dp"
+            android:layout_width="67dp"
+            android:layout_height="82dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
             android:backgroundTint="#FFC0CB"
             android:onClick="onOperatorClick"
             android:text="+"
-            android:textColor="#FFFFFF"
-            android:textSize="26sp" />
+            android:textSize="35sp" />
+
 
         <Button
-            android:id="@+id/button_subtract"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="8dp"
+            android:layout_width="78dp"
+            android:layout_height="85dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
             android:backgroundTint="#FFC0CB"
             android:onClick="onOperatorClick"
             android:text="-"
-            android:textColor="#FFFFFF"
-            android:textSize="26sp" />
+            android:textSize="40sp" />
 
         <Button
-            android:id="@+id/button_multiply"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="8dp"
+            android:layout_width="77dp"
+            android:layout_height="85dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
             android:backgroundTint="#FFC0CB"
             android:onClick="onOperatorClick"
             android:text="×"
-            android:textColor="#FFFFFF"
-            android:textSize="26sp" />
+            android:textSize="35sp" />
 
         <Button
-            android:id="@+id/button_divide"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_margin="8dp"
+            android:layout_width="76dp"
+            android:layout_height="85dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
             android:backgroundTint="#FFC0CB"
             android:onClick="onOperatorClick"
             android:text="÷"
-            android:textColor="#FFFFFF"
-            android:textSize="26sp" />
-    </LinearLayout>
+            android:textSize="35sp" />
 
-    <Button
-        android:id="@+id/button_clear"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#FF69B4"
-        android:onClick="onClearClick"
-        android:text="נקה הכל"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+
+        <Button
+            android:layout_width="72dp"
+            android:layout_height="62dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:backgroundTint="#FF69B4"
+            android:onClick="onClearClick"
+            android:text="AC"
+            android:textSize="18sp" />
+
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="85dp"
+            android:layout_columnWeight="3"
+            android:layout_margin="5dp"
+            android:backgroundTint="#FF1493"
+            android:onClick="onEqualClick"
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+    </GridLayout>
 
 </LinearLayout>
